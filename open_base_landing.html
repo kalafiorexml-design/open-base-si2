@@ -1,0 +1,56 @@
+<!doctype html><html lang="pl"><meta charset="utf-8">
+<title>Open Base + SI² — start</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { --bg:#0b0d12; --fg:#f2f5f8; --muted:#a9b0bb; --acc:#76e5a0; --card:#12161d; }
+* { box-sizing:border-box }
+body { margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu; background:var(--bg); color:var(--fg);}
+.wrap { max-width:980px; margin:0 auto; padding:32px 20px; }
+.hero { padding:56px 0 28px; }
+h1 { font-size:40px; margin:0 0 10px; letter-spacing:.2px }
+p.lead { color:var(--muted); max-width:760px }
+.card { background:var(--card); border:1px solid #1b2230; border-radius:14px; padding:20px; margin:18px 0; }
+.btns a { display:inline-block; margin:10px 12px 0 0; padding:12px 16px; border-radius:10px; text-decoration:none; color:#091014; background:var(--acc); font-weight:700 }
+.btns a.alt { background:#1b2230; color:var(--fg); border:1px solid #2a3346 }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+.small { color:var(--muted); font-size:13px }
+footer { color:var(--muted); padding:26px 0; font-size:13px }
+code { background:#0f141c; padding:2px 6px; border-radius:6px; }
+</style>
+<div class="wrap">
+  <section class="hero">
+    <h1>Open Base + SI²</h1>
+    <p class="lead">Darmowa, legalna baza wiedzy + lekki silnik liczenia. Jeden klik i masz zestaw startowy: pobieranie otwartych danych, indeks tekstowy, dashboard oraz „artefakty” do pracy badawczej.</p>
+    <div class="btns">
+      <a href="open_base_bootstrap.zip" download>Pobierz Open Base (ZIP)</a>
+      <a href="starter_pack_v01.zip" download class="alt">Starter Pack v0.1 (ZIP)</a>
+      <a href="si2_dashboard.html" class="alt">Zobacz dashboard</a>
+    </div>
+  </section>
+
+  <div class="card">
+    <h3>Co jest w środku</h3>
+    <div class="grid">
+      <div><b>Open Base</b><br><span class="small">fetcher z checksumami, manifest otwartych datasetów, opcjonalny FTS5, workflow GitHub Actions (tylko meta).</span></div>
+      <div><b>Vault</b><br><span class="small">destylaty (MDR), protokół ekspansji, backlog badań, wizualizacja ζ(1/2+it).</span></div>
+      <div><b>Dashboard</b><br><span class="small">KPI: zadania, błędy narzędzi, self‑check; gotowy do rozbudowy o p95/ECE.</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Jak uruchomić (lokalnie)</h3>
+    <pre><code>unzip open_base_bootstrap.zip -d open-base && cd open-base
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scriptsctivate
+pip install -r requirements.txt
+python fetch.py --config config.yaml --out ./data</code></pre>
+    <p class="small">Zachowujemy licencje i ToS. Nie pobieramy „ciężarów” na CI; zaczynamy od API/małych zrzutów.</p>
+  </div>
+
+  <div class="card">
+    <h3>Publikacja (za darmo)</h3>
+    <p class="small">Najłatwiej wrzucić publicznie na GitHub i włączyć „Pages”. Pliki statyczne z tej strony działają od ręki.</p>
+  </div>
+
+  <footer>Ostatnia aktualizacja: 2025-08-27 22:30. Wszystko open-source (MIT). Szanuj licencje datasetów.</footer>
+</div>
+</html>
