@@ -1,0 +1,61 @@
+<!doctype html><html lang="pl"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mollifier — wyostrzanie zer ζ</title>
+<style>
+body { font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu; margin:0; padding:24px; color:#0f172a; background:#f8fafc }
+section { max-width: 960px; margin: 0 auto 24px auto; background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 20px }
+h1,h2 { margin: 0 0 .4rem 0 }
+small, .muted { color:#64748b }
+code,kbd { background:#f1f5f9; padding:2px 6px; border-radius:6px }
+img { max-width:100%; height:auto; border:1px solid #e5e7eb; border-radius:10px }
+table { border-collapse: collapse; width:100%; }
+td,th { border:1px solid #e5e7eb; padding:6px 8px; text-align:right }
+th { background:#f1f5f9; }
+</style>
+<section>
+  <h1>Mollifier — „wyostrzanie” zer ζ</h1>
+  <p class="muted">Aktualizacja: 2025-08-27 22:39</p>
+  <p><b>Co robimy:</b> z surowego sygnału <code>|ζ(1/2+it)|</code> budujemy „skorę” <code>score = −log(|ζ|+ε)</code>, a potem ją <b>wygładzamy</b> (gaussowskim mollifierem). Piki wyniku wskazują miejsca, gdzie <code>|ζ|</code> ma głębokie dołki — czyli kandydatów na zera.</p>
+  <p>To jest <i>zabawka edukacyjna</i>. Prawdziwe „mollifiery” w teorii analitycznej to <b>Dirichletowskie wielomiany</b> mnożone przez ζ, zaprojektowane, by kontrolować średnie. Tutaj pokazujemy intuicję: jak filtr poprawia sygnał „zero‑podobieństwa”.</p>
+</section>
+
+<section>
+  <h2>1) Sygnał bazowy</h2>
+  <p>To surowe <code>|ζ(1/2+it)|</code> w zakresie t∈[0.5, 50.0].</p>
+  <img src="zeta_mollifier_raw.png" alt="surowy |ζ|">
+</section>
+
+<section>
+  <h2>2) Wynik mollifiera</h2>
+  <p>Widać wyraźne piki — to miejsca, gdzie <code>|ζ|</code> ma głębokie minima.</p>
+  <img src="zeta_mollifier_smoothed.png" alt="mollified −log|ζ|">
+</section>
+
+<section>
+  <h2>3) Porównanie z pierwszymi znanymi zerami</h2>
+  <table>
+    <tr><th>t (predykcja)</th><th>t (znane zero, najbliższe)</th><th>|różnica|</th></tr>
+    <tr><td>14.129537</td><td>14.134725</td><td>0.005188</td></tr>
+<tr><td>21.068210</td><td>21.022040</td><td>0.046170</td></tr>
+<tr><td>30.546934</td><td>30.424876</td><td>0.122058</td></tr>
+<tr><td>49.504380</td><td>48.005150</td><td>1.499230</td></tr>
+<tr><td>48.389237</td><td>48.005150</td><td>0.384087</td></tr>
+<tr><td>32.777222</td><td>32.935061</td><td>0.157839</td></tr>
+<tr><td>24.971214</td><td>25.010858</td><td>0.039644</td></tr>
+<tr><td>40.954944</td><td>40.918719</td><td>0.036225</td></tr>
+<tr><td>2.606383</td><td>14.134725</td><td>11.528342</td></tr>
+<tr><td>43.185232</td><td>43.327073</td><td>0.141841</td></tr>
+<tr><td>37.609512</td><td>37.586178</td><td>0.023334</td></tr>
+  </table>
+  <p class="muted">Zbieżność nie jest idealna (to tylko demo i szybka aproksymacja ζ), ale widać, że piki trafiają blisko znanych zer.</p>
+</section>
+
+<section>
+  <h2>4) Co dalej</h2>
+  <ol>
+    <li>Pobierz <a href="zeta_mollifier.csv">CSV</a> i narysuj własny wykres w Excelu.</li>
+    <li>Poproś mnie: <b>„ROŚNIJ: Λ — zabawka PDE”</b> — pokażę prostą symulację „rozmywania ciepłem”.</li>
+    <li>Gdy będziesz gotów, wgramy te pliki do Twojego repo „mózgu zewnętrznego”.</li>
+  </ol>
+</section>
+</html>

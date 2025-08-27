@@ -1,0 +1,52 @@
+<!doctype html><html lang="pl"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riemann — Λ i wizualizacja |ζ(1/2+it)|</title>
+<style>
+body { font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu; margin:0; padding:24px; color:#0f172a; background:#f8fafc }
+h1,h2,h3 { margin: 0 0 .4rem 0 }
+section { max-width: 900px; margin: 0 auto 24px auto; background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 20px }
+small, .muted { color:#64748b }
+code,kbd { background:#f1f5f9; padding:2px 6px; border-radius:6px }
+a { color:#0369a1; text-decoration:none }
+a:hover { text-decoration:underline }
+img { max-width:100%; height:auto; border-radius:10px; border:1px solid #e5e7eb }
+ul { margin:.2rem 0 .6rem 1.2rem }
+.footer { text-align:center; color:#64748b; font-size:13px; margin-top:10px }
+</style>
+
+<section>
+  <h1>Riemann — stała de&nbsp;Bruijna–Newmana (Λ) i wykres |ζ(1/2+it)|</h1>
+  <p class="muted">Ostatnia aktualizacja: 2025-08-27 22:35</p>
+  <p><b>Cel:</b> na jednej stronie, po ludzku: czym jest Λ i jak wygląda moduł ζ na prostej krytycznej (gdzie spodziewamy się zer). To nie jest dowód — to <i>intuicyjny radar</i>.</p>
+</section>
+
+<section>
+  <h2>1) Co to jest Λ (Lambda)?</h2>
+  <p>Niech <code>ξ(s)</code> to „upiększona” funkcja Riemanna zeta, spełniająca równanie funkcjonalne. Wyobraź sobie rodzinę funkcji <code>H_t</code>, powstającą z <code>ξ</code> przez coś w rodzaju „odwróconego rozmywania ciepłem” (technicznie: przepływ równaniem ciepła w parametrze <code>t</code>).</p>
+  <ul>
+    <li>Dla dużych <code>t</code> wszystkie zera <code>H_t</code> są <b>rzeczywiste</b>.</li>
+    <li>Gdy cofamy „rozmywanie” (zmniejszamy <code>t</code>), w pewnym momencie mogą pojawić się zera nierzeczywiste.</li>
+  </ul>
+  <p><b>Stała Λ</b> to najmniejsze <code>t</code>, od którego w dół zaczynają się kłopoty (pojawiają się zera poza osią rzeczywistą). I teraz kluczowy fakt:</p>
+  <p style="background:#f8fafc;border-left:4px solid #0ea5e9;padding:8px 12px;border-radius:6px"><b>Hipoteza Riemanna ⇔ Λ ≤ 0</b>. (A wiemy z wyników współczesnych, że <b>Λ ≥ 0</b>.)</p>
+  <p>Czyli: jeśli udałoby się pokazać, że Λ jest dokładnie równe zeru, mielibyśmy RH. Jeżeli okazałoby się, że Λ &gt; 0 — RH upada.</p>
+</section>
+
+<section>
+  <h2>2) Jak czytać ten wykres?</h2>
+  <p>Patrzymy na wartość <code>|ζ(1/2 + i·t)|</code> — moduł ζ na tzw. prostej krytycznej. Tam, gdzie wykres schodzi do zera, mamy <b>zero funkcji ζ</b>. Pionowe przerywane linie to znane przybliżone położenia pierwszych zer.</p>
+  <img src="zeta_crit_plot.png" alt="Wykres |ζ(1/2+it)| z zaznaczonymi przybliżonymi zerami">
+  <p class="muted">Uwaga: używamy „η‑szeregu” do szybkiej aproksymacji — wystarczającej do nauki i intuicji, ale nie do precyzyjnych dowodów.</p>
+</section>
+
+<section>
+  <h2>3) Co możesz zrobić dalej (łagodnie)</h2>
+  <ol>
+    <li>Pobierz <a href="zeta_crit.csv">CSV</a> i otwórz w Excelu — zobacz jak zmienia się <code>|ζ|</code> gdy rośnie <code>t</code>.</li>
+    <li>Wybierz jeden z pionowych „dołków” i sprawdź w sieci, jak brzmi jego „numer” (np. ~14.1347… to pierwsze zero).</li>
+    <li>Zapytaj mnie o „mollifiery” albo o prostą wersję „równania ciepła” dla <code>ξ</code> — przygotuję kolejną stronę z obrazkiem.</li>
+  </ol>
+</section>
+
+<div class="footer">To jest materiał edukacyjny. Z czasem możemy dołożyć: wizualizację argumentu ζ, proste „łowienie zer”, oraz szkic Λ w formie zabawki PDE.</div>
+</html>
