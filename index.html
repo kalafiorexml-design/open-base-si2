@@ -4,7 +4,37 @@
 <style>
 :root { --bg:#0b0d12; --fg:#f2f5f8; --muted:#a9b0bb; --acc:#76e5a0; --card:#12161d; }
 * { box-sizing:border-box }
-body { margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu; background:var(--bg); color:var(--fg);}
+body <div id="si2-capacity" style="font:14px/1.5 system-ui; border:1px solid #e5e7eb; border-radius:12px; padding:12px 14px; max-width:520px;">
+  <b>SI² · Capacity</b>
+  <div id="cap-body">Loading…</div>
+</div>
+<script>
+(async () => {
+  async function fetchJSON(url){ const r = await fetch(url); if(!r.ok) throw new Error(url); return r.json(); }
+  const capEl = document.getElementById('cap-body');
+  try {
+    const catalog = await fetchJSON('reports/catalog.json');       // źródło prawdy
+    const items = Array.isArray(catalog) ? catalog : (catalog.items || []);
+    const reports = items.length;
+    const sumScore = items.reduce((a,x)=>a+(x.score||0),0);
+    const updated = items.map(x=>x.updated||'').filter(Boolean).sort().pop() || '';
+    capEl.innerHTML = `
+      <div>Raporty: <b>${reports}</b></div>
+      <div>Σ score: <b>${sumScore}</b></div>
+      <div>Ostatnia aktualizacja: <b>${updated||'—'}</b></div>
+      <div style="margin-top:8px;">
+        <div style="height:10px;background:#e5e7eb;border-radius:8px;overflow:hidden;">
+          <div style="height:10px;width:${Math.min(100, reports*5)}%;background:#22c55e;"></div>
+        </div>
+        <small>„Potencjał” ~ liczba raportów (proxy do czasu ⟶ własny alg. później)</small>
+      </div>`;
+  } catch(e) {
+    capEl.textContent = 'Brak katalogu raportów (reports/catalog.json).';
+  }
+})();
+</script>
+
+  { margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu; background:var(--bg); color:var(--fg);}
 .wrap { max-width:980px; margin:0 auto; padding:32px 20px; }
 .hero { padding:56px 0 28px; }
 h1 { font-size:40px; margin:0 0 10px; letter-spacing:.2px }
