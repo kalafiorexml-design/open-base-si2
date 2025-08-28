@@ -1,0 +1,57 @@
+{
+  "title": "Open Base + SI² — Reports Catalog",
+  "updated": "2025-08-27T23:52:34Z",
+  "items": [
+    {
+      "id": "riemann-lambda",
+      "title": "Riemann — Λ i wykres |ζ(1/2+it)|",
+      "path": "reports/riemann/Riemann_Lambda_report.html",
+      "cover": "reports/riemann/zeta_crit_plot.png",
+      "data": [
+        "reports/riemann/zeta_crit.csv"
+      ],
+      "tags": [
+        "riemann",
+        "zeta",
+        "Λ",
+        "visualization"
+      ],
+      "summary": "Wizualizacja modułu ζ na prostej krytycznej; intuicja do Λ.",
+      "updated": "2025-08-27T23:52:34Z"
+    },
+    {
+      "id": "mollifier",
+      "title": "Mollifier — wyostrzanie zer ζ",
+      "path": "reports/riemann/Mollifier_report.html",
+      "cover": "reports/riemann/zeta_mollifier_smoothed.png",
+      "data": [
+        "reports/riemann/zeta_mollifier.csv"
+      ],
+      "tags": [
+        "mollifier",
+        "filter",
+        "zeta"
+      ],
+      "summary": "Delikatny filtr (−log|ζ| → gładzenie gaussowskie) uwydatnia minima.",
+      "updated": "2025-08-27T23:52:34Z"
+    },
+    {
+      "id": "lambda-heat",
+      "title": "Λ — zabawka PDE (rozmywanie ciepłem)",
+      "path": "reports/riemann/Lambda_heat_toy_report.html",
+      "cover": "reports/riemann/Ht_t2.0.png",
+      "data": [
+        "reports/riemann/Lambda_heat_zeros.csv"
+      ],
+      "tags": [
+        "Λ",
+        "PDE",
+        "heat-flow",
+        "zeros",
+        "toy"
+      ],
+      "summary": "Rodzina H_t pokazuje, jak pary zer zbliżają się i znikają, dając intuicję do Λ.",
+      "updated": "2025-08-27T23:52:34Z"
+    }
+  ]
+}
