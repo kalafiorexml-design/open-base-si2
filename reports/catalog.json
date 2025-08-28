@@ -55,3 +55,14 @@
     }
   ]
 }
+{
+  "id": "operators-v01",
+  "title": "Operators v01 — Combine · Compare · Distill",
+  "path": "reports/riemann/riemann_operators_report_v01.html",
+  "cover": "reports/riemann/operators_distill_v01.png",
+  "data": ["reports/riemann/riemann_operators_v01.csv"],
+  "tags": ["operators","combine","compare","distill","riemann","zeta","dirichlet"],
+  "summary": "Operacje łączenia, porównania i destylacji na danych Dirichlet-mollifier v01.",
+  "updated": "…Z",
+  "score": 1
+}
