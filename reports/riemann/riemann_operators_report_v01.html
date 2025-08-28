@@ -1,0 +1,38 @@
+<!doctype html><html lang="pl"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operators v01 — Combine · Compare · Distill</title>
+<style>
+body { font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu; margin:0; padding:24px; color:#0f172a; background:#f8fafc }
+section { max-width: 960px; margin: 0 auto 24px auto; background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:18px 20px }
+h1,h2 { margin: 0 0 .4rem 0 }
+small, .muted { color:#64748b }
+img { max-width:100%; height:auto; border:1px solid #e5e7eb; border-radius:10px }
+code { background:#f1f5f9; padding:2px 6px; border-radius:6px }
+</style>
+<section>
+  <h1>Operators v01 — Combine · Compare · Distill</h1>
+  <p class="muted">Aktualizacja: 2025-08-28 07:37</p>
+  <p>Na danych z <em>Dirichlet‑mollifier v01</em> pokazujemy trzy klasy operacji:</p>
+  <ul>
+    <li><b>Combine</b>: zestawiamy surowe krzywe <code>|ζ|</code> i <code>|M·ζ|</code>.</li>
+    <li><b>Compare</b>: liczymy <code>ratio = |M·ζ|/|ζ|</code> i <code>delta = |M·ζ| − |ζ|</code>.</li>
+    <li><b>Distill</b>: wygładzamy (Gauss σ≈3) i wykrywamy piki <code>score(t)</code>.</li>
+  </ul>
+</section>
+<section>
+  <h2>Combine</h2>
+  <img src="operators_curves_v01.png" alt="combine curves">
+</section>
+<section>
+  <h2>Compare</h2>
+  <img src="operators_compare_v01.png" alt="compare ratio delta">
+</section>
+<section>
+  <h2>Distill</h2>
+  <img src="operators_distill_v01.png" alt="distill smooth and peaks">
+</section>
+<section>
+  <h2>Dane</h2>
+  <p>CSV (pochodne): <a href="riemann_operators_v01.csv">riemann_operators_v01.csv</a></p>
+</section>
+</html>
